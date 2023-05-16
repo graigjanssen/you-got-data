@@ -10,3 +10,23 @@ body {
   width: 92%;
   margin: 10px auto;
 }
+
+.results-table {
+  border-collapse: collapse;
+  th {
+    padding: 12px 4px;
+    background-color: #4b465a;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+  td {
+    padding: 8px;
+  }
+  th, td {
+    border: 1px solid #726f7a;
+  }
+  &--img {
+    max-height: 80px;
+  }
+}

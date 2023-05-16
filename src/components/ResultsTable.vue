@@ -17,7 +17,15 @@
         <td class="results-table--cell"
             v-for="col in tableKeys"
             :key="col">
-          {{ row[col] }}
+          <template v-if="col === 'rating'">
+            {{ row[col]['rate'] }} ({{ row[col]['count']}} reviews)
+          </template>
+          <template v-else-if="col === 'image'">
+            <img class="results-table--img" :src="row[col]" alt="product image">
+          </template>
+          <template v-else>
+            {{ row[col] }}
+          </template>
         </td>
       </tr>
     </tbody>

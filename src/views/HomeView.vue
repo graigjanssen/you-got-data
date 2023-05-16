@@ -8,27 +8,21 @@
 <script lang="ts">
 
 import { defineComponent } from 'vue';
-import { fetchData } from '@/services/apiService';
+import { mapActions, mapGetters } from 'vuex';
 import ResultsTable from '@/components/ResultsTable.vue';
 
 export default defineComponent({
   components: {
     ResultsTable
   },
-  data () {
-    return {
-      products: null,
+  computed: {
+    ...mapGetters(['getProducts']),
+    products () {
+      return this.getProducts
     }
   },
   methods: {
-    async fetchProducts() {
-      try {
-        this.products = await fetchData();
-        console.log('products? ', this.products);
-      } catch (error) {
-        console.error(error);
-      }
-    }
+    ...mapActions(['fetchProducts']),
   },
   mounted() {
     this.fetchProducts();
