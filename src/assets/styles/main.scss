@@ -1,3 +1,5 @@
+$color-btn-primary: #005eaa;
+
 body {
   background-color: #110e15;
   color: #fcfcfc;
@@ -28,5 +30,38 @@ body {
   }
   &--img {
     max-height: 80px;
+  }
+}
+
+.results-filter {
+  width: 50%;
+  height: 60px;
+  padding: 12px;
+  border: 1px solid #889;
+  border-radius: 4px;
+  .filter-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .filter-section {
+      height: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  .btn-apply {
+    background-color: $color-btn-primary;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color .3s ease;
+    &:hover {
+      background-color: darken($color-btn-primary, 10%);
+    }
   }
 }

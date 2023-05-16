@@ -1,14 +1,14 @@
 <template>
   <div class="results-filter">
-    <form @submit.prevent="applyFilters">
-      <div>
+    <form class="filter-form" @submit.prevent="applyFilters">
+      <div class="filter-section">
         <label for="category">Category</label>
         <select id="category" v-model="selectedCategory">
           <option value="all">All</option>
           <option v-for="category in categories" :key="category" :value="category">{{ category }}</option>
         </select>
       </div>
-      <button type="submit">Apply</button>
+      <button class="btn-apply" type="submit">Apply</button>
     </form>
   </div>
 </template>
